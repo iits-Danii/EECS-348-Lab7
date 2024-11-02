@@ -9,7 +9,14 @@ public:
     void readFromStdin();
     
     // 2. Display a matrix
-    void display() const;
+    void display() const {
+        for (int i = 0; i < SIZE; i++) {
+            cout << "\n";
+            for (int j = 0; j < SIZE; j++) {
+                cout << "%d\t" << data[j][i];
+            }
+        }
+    }
     
     // 3. Add two matrices (operator overloading for +)
     Matrix operator+(const Matrix& other) const;
@@ -22,7 +29,9 @@ public:
     
     // 6. Swap matrix rows
     void swapRows(int row1, int row2);
+
 };
+
 int main() {
     // Example usage:
     Matrix mat1;
