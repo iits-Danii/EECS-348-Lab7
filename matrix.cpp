@@ -59,15 +59,17 @@ public:
     // 5. Compute the sum of matrix diagonal elements
     int sumOfDiagonals() const {
         int sum = 0;
+        //stores the sum of both diagonals by adding each value from a diagonal to sum
         for (int i = 0; i < SIZE; i++) {
             sum += data[i][i];
-            sum += data[i][SIZE - i-1];
+            sum += data[i][SIZE - i - 1];
         }
         return sum;
     }
     
     // 6. Swap matrix rows
     void swapRows(int row1, int row2) {
+        //uses for loop and temp variable to store data while swapping and find the rows to swap as appropriate
         for (int col = 0; col < SIZE; col++) {
             int temp = data[row1][col];
             data[row1][col] = data[row2][col];
